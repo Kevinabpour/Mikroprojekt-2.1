@@ -20,6 +20,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+/*Skrevet af Christian*/
+/*Made the navbar into DSV colors*/
 .navbar {
     background-color: #192862;
     left: 0;
@@ -27,3 +31,27 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     
 }
+/*The text for the container */
+.dsv-text {
+    margin: 20px auto;
+    color: white; /*Text color*/
+    position: relative;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+
+/*The modifications and the container itself*/
+.dsv-content {
+    background-color: #192862;
+    border-radius: 25px;
+    padding: 20px;
+    max-width: 820px;
+    flex-grow: 1;
+    font-style: italic;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    align-content: center;
+}
+/*----------------------------------------------*/
+
+    
