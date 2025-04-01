@@ -2,3 +2,11 @@
 @model Mikroprojekt_2.Pages.ReservationModel
 @{
 }
+
+<div class="col-md-4 text-center mb-2">
+    <img src="~/Images/Room1.jpg" class="img-fluid rounded mb-2" alt="Montenegro">
+    Rum @Model.room.Name <br />
+    ✅ Plads til @Model.room.Capacity personer <br />
+    @((Model.room.Equipment.Contains("Forplejning")) ? "✅" : "❌") Forplejning <br />
+    @((Model.room.Equipment.Contains("Smartboard")) ? "✅" : "❌") Smartboard
+</div>

@@ -11,10 +11,10 @@ namespace Mikroprojekt_2.Repo
             _rooms.Add(new Room(102, "room2", "description 2", 10, []));
             _rooms.Add(new Room(103, "room3", "description 3", 50, ["Smartboard"]));
             _rooms.Add(new Room(104, "room4", "description 4", 20, ["Forplejning"]));
-            _rooms.Add(new Room(104, "room5", "description 5", 25, ["Smartboard"]));
-            _rooms.Add(new Room(104, "room6", "description 6", 5, ["Smartboard", "Forplejning"]));
-            _rooms.Add(new Room(104, "room7", "description 7", 40, ["Smartboard", "Forplejning"]));
-            _rooms.Add(new Room(104, "room8", "description 8", 500, ["Smartboard"]));
+            _rooms.Add(new Room(105, "room5", "description 5", 25, ["Smartboard"]));
+            _rooms.Add(new Room(106, "room6", "description 6", 5, ["Smartboard", "Forplejning"]));
+            _rooms.Add(new Room(107, "room7", "description 7", 40, ["Smartboard", "Forplejning"]));
+            _rooms.Add(new Room(108, "room8", "description 8", 500, ["Smartboard"]));
         } 
         public List<Room> GetAll()
         {
