@@ -2,7 +2,7 @@
 {
     public class Room // Class for a rooom
     {
-        public string RoomID { get; set; }
+        public int RoomID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int Capacity { get; set; }
@@ -10,13 +10,14 @@
 
         public Room()
         {
+            RoomID = 0;
             Name = "default name";
             Description = "default description";
             Capacity = 20;
             Equipment.Add("default equipment");
 
         }
-        public Room(string roomID, string name, string description, int capacity, List<string> equipment)
+        public Room(int roomID, string name, string description, int capacity, List<string> equipment)
         {
             RoomID = roomID;
             Name = name;
