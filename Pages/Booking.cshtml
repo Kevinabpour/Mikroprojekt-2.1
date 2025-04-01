@@ -10,7 +10,7 @@
 <body>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid"> <!-- FILTER DROPDOWN MENU-->
         <div class="d-flex justify-content-end">
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -30,18 +30,7 @@
         </div>
     </div>
 
-    <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $(".dropdown-menu li").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
-        });
-    </script>
-
-    <div class="container mt-4">
+    <div class="container mt-4"> <!--BILLEDER AF MØDERUM-->
         <div class="row mb-4 justify-content-center">
             <div class="col-md-4 text-center">
                 <img src="~/Images/Room1.jpg" class="img-fluid rounded" alt="Montenegro">
@@ -79,7 +68,7 @@
         </div>
     </div>
 
-    <form method="post" action="/action_page.php">
+    <form method="post" action="/action_page.php"> <!--EMAIL OG MEDARBEJDERKODE-->
         <div class="mb-3 mt-3">
             <label for="email" class="form-label">Email:</label>
             <input type="email" class="form-control" id="email" placeholder="Skriv din arbejdsmail" name="email">
