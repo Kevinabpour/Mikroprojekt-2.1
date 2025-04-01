@@ -31,40 +31,17 @@
     </div>
 
     <div class="container mt-4"> <!--BILLEDER AF MØDERUM-->
-        <div class="row mb-4 justify-content-center">
-            <div class="col-md-4 text-center">
-                <img src="~/Images/Room1.jpg" class="img-fluid rounded" alt="Montenegro">
-                <div class="form-check form-switch mt-2">
-                    <input class="form-check-input" type="checkbox" id="switch1" name="room1">
-                    <label class="form-check-label" for="switch1">Montenegro (5. personer)<br />❌ Forplejning<br />❌ Smartboard</label>
+        <div class="row mb-4">
+            @foreach (var room in Model.Rooms)
+            {
+                <div class="col-md-4 text-center">
+                    <img src="~/Images/Room1.jpg" class="img-fluid rounded" alt="Montenegro">
+                    <div class="form-check form-switch mt-2">
+                        <input class="form-check-input" type="checkbox" id="@room.RoomID" name="@room.RoomID">
+                        <label class="form-check-label" for="@room.RoomID">@room.Name (@room.Capacity. personer)<br />❌ Forplejning<br />❌ Smartboard</label>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-4 text-center">
-                <img src="~/Images/Room2.jpg" class="img-fluid rounded" alt="Ungarn">
-                <div class="form-check form-switch mt-2">
-                    <input class="form-check-input" type="checkbox" id="switch2" name="room2">
-                    <label class="form-check-label" for="switch2">Ungarn (10. personer)<br />❌ Forplejning<br />✅ Smartboard</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-4 text-center">
-                <img src="~/Images/Room3.jpg" class="img-fluid rounded" alt="Montenegro">
-                <div class="form-check form-switch mt-2">
-                    <input class="form-check-input" type="checkbox" id="switch3" name="room3">
-                    <label class="form-check-label" for="switch3">Frankrig (30. personer)<br />✅Forplejning<br />✅Smartboard</label>
-                </div>
-            </div>
-
-            <div class="col-md-4 text-center">
-                <img src="~/Images/Room4.jpg" class="img-fluid rounded" alt="Montenegro">
-                <div class="form-check form-switch mt-2">
-                    <input class="form-check-input" type="checkbox" id="switch4" name="room4">
-                    <label class="form-check-label" for="switch4">Rusland (50. personer)<br />❌ Forplejning<br />✅Projektor</label>
-                </div>
-            </div>
+            }       
         </div>
     </div>
 
