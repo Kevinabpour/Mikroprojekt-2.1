@@ -7,8 +7,4 @@
     <RootNamespace>Mikroprojekt_2</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
-  </ItemGroup>
-
 </Project>

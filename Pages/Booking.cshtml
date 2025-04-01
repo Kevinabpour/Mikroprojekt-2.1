@@ -1,33 +1,34 @@
 ﻿@page
-@model PortofolioRAZOR.Pages.Index1Model
+@model Mikroprojekt_2.Pages.BookingcshtmlModel
 @{
 }
+
 <h2>Mødebooking DSV Headquarters</h2>
 <h5>Book eller ændre i dit ønskede mødelokale</h5>
 <!DOCTYPE html>
 <html>
 <body>
 
-   
-        <div class="container-fluid">
-            <div class="d-flex justify-content-end">
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        Filtrer
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <input class="form-control" id="myInput" type="text" placeholder="Søg..">
-                        <li><a class="dropdown-item" href="#">Whiteboard/Projektor</a></li>
-                        <li><a class="dropdown-item" href="#">Forplejning</a></li>
-                        <li><a class="dropdown-item" href="#">Op til 5 personer</a></li>
-                        <li><a class="dropdown-item" href="#">Op til 10 personer</a></li>
-                        <li><a class="dropdown-item" href="#">Op til 30 personer</a></li>
-                        <li><a class="dropdown-item" href="#">Op til 50 personer</a></li>
-                    </ul>
-                </div>
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-end">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Filtrer
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <input class="form-control" id="myInput" type="text" placeholder="Søg..">
+                    <li><a class="dropdown-item" href="#">Whiteboard/Projektor</a></li>
+                    <li><a class="dropdown-item" href="#">Forplejning</a></li>
+                    <li><a class="dropdown-item" href="#">Op til 5 personer</a></li>
+                    <li><a class="dropdown-item" href="#">Op til 10 personer</a></li>
+                    <li><a class="dropdown-item" href="#">Op til 30 personer</a></li>
+                    <li><a class="dropdown-item" href="#">Op til 50 personer</a></li>
+                </ul>
             </div>
         </div>
+    </div>
 
     <script>
         $(document).ready(function(){
@@ -43,7 +44,7 @@
     <div class="container mt-4">
         <div class="row mb-4 justify-content-center">
             <div class="col-md-4 text-center">
-                <img src="~/Images/mchaveli.png" class="img-fluid rounded" alt="Montenegro">
+                <img src="~/Images/Room1.jpg" class="img-fluid rounded" alt="Montenegro">
                 <div class="form-check form-switch mt-2">
                     <input class="form-check-input" type="checkbox" id="switch1" name="room1">
                     <label class="form-check-label" for="switch1">Montenegro (5. personer)<br />❌ Forplejning<br />❌ Smartboard</label>
@@ -51,7 +52,7 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <img src="~/Images/mchaveli.png" class="img-fluid rounded" alt="Ungarn">
+                <img src="~/Images/Room2.jpg" class="img-fluid rounded" alt="Ungarn">
                 <div class="form-check form-switch mt-2">
                     <input class="form-check-input" type="checkbox" id="switch2" name="room2">
                     <label class="form-check-label" for="switch2">Ungarn (10. personer)<br />❌ Forplejning<br />✅ Smartboard</label>
@@ -61,7 +62,7 @@
 
         <div class="row justify-content-center">
             <div class="col-md-4 text-center">
-                <img src="~/Images/mchaveli.png" class="img-fluid rounded" alt="Frankrig">
+                <img src="~/Images/Room3.jpg" class="img-fluid rounded" alt="Montenegro">
                 <div class="form-check form-switch mt-2">
                     <input class="form-check-input" type="checkbox" id="switch3" name="room3">
                     <label class="form-check-label" for="switch3">Frankrig (30. personer)<br />✅Forplejning<br />✅Smartboard</label>
@@ -69,7 +70,7 @@
             </div>
 
             <div class="col-md-4 text-center">
-                <img src="~/Images/mchaveli.png" class="img-fluid rounded" alt="Montenegro">
+                <img src="~/Images/Room4.jpg" class="img-fluid rounded" alt="Montenegro">
                 <div class="form-check form-switch mt-2">
                     <input class="form-check-input" type="checkbox" id="switch4" name="room4">
                     <label class="form-check-label" for="switch4">Rusland (50. personer)<br />❌ Forplejning<br />✅Projektor</label>
