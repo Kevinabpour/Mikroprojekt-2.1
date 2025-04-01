@@ -11,6 +11,10 @@ namespace Mikroprojekt_2.Repo
             _rooms.Add(new Room(102, "room2", "description 2", 10, ["equipment1", "equipment2"]));
             _rooms.Add(new Room(103, "room3", "description 3", 50, ["equipment1", "equipment2"]));
             _rooms.Add(new Room(104, "room4", "description 4", 20, ["equipment1", "equipment2"]));
+            _rooms.Add(new Room(104, "room5", "description 5", 25, ["equipment1", "equipment2"]));
+            _rooms.Add(new Room(104, "room6", "description 6", 5, ["equipment1", "equipment2"]));
+            _rooms.Add(new Room(104, "room7", "description 7", 40, ["equipment1", "equipment2"]));
+            _rooms.Add(new Room(104, "room8", "description 8", 500, ["equipment1", "equipment2"]));
         } 
         public List<Room> GetAll()
         {
