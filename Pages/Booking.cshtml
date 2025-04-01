@@ -30,17 +30,6 @@
         </div>
     </div>
 
-    <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $(".dropdown-menu li").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
-        });
-    </script>
-
     <div class="container mt-4"> <!--BILLEDER AF MØDERUM-->
         <div class="row mb-4 justify-content-center">
             <div class="col-md-4 text-center">
