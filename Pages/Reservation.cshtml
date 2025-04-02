@@ -3,6 +3,19 @@
 @{
 }
 
+<style>
+    .custom-green {
+        background-color: green !important;
+        color: white !important;
+    }
+
+    .custom-red {
+        background-color: red !important;
+        color: white !important;
+    }
+</style>
+
+
 <div class="col-md-4 text-center mb-2">
     <img src="~/Images/Room1.jpg" class="img-fluid rounded mb-2" alt="Montenegro">
     Rum @Model.room.Name <br />
@@ -47,18 +60,20 @@
         <input type="hidden" id="selectedTime" name="selectedTime">
         <input type="hidden" id="removedreservation" name="removedreservation">
         <div class="d-grid gap-2 d-md-flex">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">11.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">12.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">12.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">12.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">11.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+
         </div>
         <div class="d-grid gap-2 d-md-flex mt-2">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">13.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">13.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">14.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">14.15</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">14.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">11.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+
         </div>
     </form>
 
@@ -70,18 +85,20 @@
     <form id="timeForm" method="post" action="/Home/SubmitTime1">
         <input type="hidden" id="selectedTime1" name="selectedTime1">
         <div class="d-grid gap-2 d-md-flex">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">11.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">12.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">12.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">12.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">13.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">11.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+
         </div>
         <div class="d-grid gap-2 d-md-flex mt-2">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">13.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">13.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">14.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">14.15</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">14.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">11.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+
         </div>
     </form>
 
@@ -93,18 +110,21 @@
     <form id="timeForm" method="post" action="/Home/SubmitTime2">
         <input type="hidden" id="selectedTime2" name="selectedTime2">
         <div class="d-grid gap-2 d-md-flex">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">11.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">12.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">12.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">12.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">13.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">11.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+
         </div>
         <div class="d-grid gap-2 d-md-flex mt-2">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">13.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">13.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">14.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">14.15</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">14.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">11.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.00</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.30</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">12.45</button>
+            <button type="button" class="btn custom-green" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+
+
         </div>
     </form>
 
