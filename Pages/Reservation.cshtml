@@ -10,7 +10,7 @@
     @((Model.room.Equipment.Contains("Forplejning")) ? "✅" : "❌") Forplejning <br />
     @((Model.room.Equipment.Contains("Smartboard")) ? "✅" : "❌") Smartboard
 </div>
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tidsvalg</title>
@@ -18,8 +18,8 @@
 
     <script>
         function toggleButton(button) {
-            button.classList.toggle("custom-red"); // Skifter til rød
-            button.classList.toggle("custom-blue"); // Skifter tilbage til custom blå
+            button.classList.toggle("custom-red"); // Changes to red
+            button.classList.toggle("custom-blue"); // Changes to blue
         }
 
         function reserveTime(button) {
@@ -39,7 +39,7 @@
         }
 
     </script>
-</head>
+
 <body class="container mt-5">
     <h3 class="mb-3">📅 Tirsdag den 1. april 2025</h3>
 
