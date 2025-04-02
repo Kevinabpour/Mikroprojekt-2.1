@@ -3,9 +3,10 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -56,6 +57,36 @@ body {
 .dropdown-toggle {
     background-color: #192862;
 }
+/*Alligns and makes the img clean*/
+.position-relative {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+/*Makes the text allign where it needs to be*/
+/*You can also edit the text*/
+.overlay-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+   
+}
+
 
 /*----------------------------------------------*/
 
