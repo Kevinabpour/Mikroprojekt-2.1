@@ -86,8 +86,9 @@ body {
     object-fit: cover;
    
 }
-.custom-green {
-    background-color: green !important;
+/*The colors for booking buttons*/
+.custom-blue {
+    background-color: #192862 !important;
     color: white !important;
 }
 

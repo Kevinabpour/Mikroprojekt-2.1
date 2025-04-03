@@ -19,98 +19,85 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <script>
-    function toggleButton(button) {
-        button.classList.toggle("custom-red"); // Skifter til rød
-        button.classList.toggle("custom-blue"); // Skifter tilbage til custom blå
-    }
+    function toggleButton(button, day, messageId) {
+        button.classList.toggle("custom-red");
+        button.classList.toggle("custom-blue");
 
-    function reserveTime(button) {
         let selectedTime = button.innerText;
-        document.getElementById("confirmationMessage").innerText = "Du har reserveret tid " + selectedTime + " Tirsdag d. 1 April";
-        document.getElementById("confirmationMessage").classList.remove("d-none");
-    }
-     function reserveTime1(button) {
-        let selectedTime1 = button.innerText;
-        document.getElementById("confirmationMessage1").innerText = "Du har reserveret tid " + selectedTime1 + " Onsdag d. 2 April";
-        document.getElementById("confirmationMessage1").classList.remove("d-none");
-     }
-         function reserveTime2(button) {
-        let selectedTime2 = button.innerText;
-        document.getElementById("confirmationMessage2").innerText = "Du har reserveret tid " + selectedTime2 + " Torsdag d. 3 April";
-        document.getElementById("confirmationMessage2").classList.remove("d-none");
-    }
+        let confirmationMessage = document.getElementById(messageId);
 
+        if (button.classList.contains("custom-red")) {
+            confirmationMessage.innerText = "Du har reserveret tid " + selectedTime + " " + day;
+        } else {
+            confirmationMessage.innerText = "Du har aflyst din tid kl. " + selectedTime + " " + day;
+        }
+
+        confirmationMessage.classList.remove("d-none");
+
+        // Fjern beskeden efter 5-7 sekunder
+        setTimeout(() => {
+            confirmationMessage.classList.add("d-none");
+        }, 6000);
+    }
 </script>
 
 <body class="container mt-5">
     <h3 class="mb-3">📅 Tirsdag den 1. april 2025</h3>
-
-    <form id="timeForm" method="post" action="/Home/SubmitTime">
-        <input type="hidden" id="selectedTime" name="selectedTime">
-        <input type="hidden" id="removedreservation" name="removedreservation">
+    <form>
         <div class="d-grid gap-2 d-md-flex">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">11.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">12.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">12.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">12.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">13.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">11.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">12.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">12.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">12.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">13.00</button>
         </div>
         <div class="d-grid gap-2 d-md-flex mt-2">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">13.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">13.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">14.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">14.15</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime(this);">14.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">13.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">13.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">14.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">14.15</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Tirsdag d. 1 April', 'confirmationMessage1')">14.30</button>
         </div>
     </form>
-
-    <div id="confirmationMessage" class="alert alert-success mt-3 d-none"></div>
-</body>
-<body class="container mt-5">
-    <h3 class="mb-3">📅 Onsdag den 2. april 2025</h3>
-
-    <form id="timeForm" method="post" action="/Home/SubmitTime1">
-        <input type="hidden" id="selectedTime1" name="selectedTime1">
-        <div class="d-grid gap-2 d-md-flex">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">11.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">12.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">12.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">12.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">13.00</button>
-        </div>
-        <div class="d-grid gap-2 d-md-flex mt-2">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">13.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">13.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">14.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">14.15</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime1(this);">14.30</button>
-        </div>
-    </form>
-
     <div id="confirmationMessage1" class="alert alert-success mt-3 d-none"></div>
-</body>
-<body class="container mt-5">
-    <h3 class="mb-3">📅 Torsdag den 3. april 2025</h3>
 
-    <form id="timeForm" method="post" action="/Home/SubmitTime2">
-        <input type="hidden" id="selectedTime2" name="selectedTime2">
+    <h3 class="mb-3">📅 Onsdag den 2. april 2025</h3>
+    <form>
         <div class="d-grid gap-2 d-md-flex">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">11.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">12.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">12.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">12.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">13.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">11.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">12.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">12.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">12.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">13.00</button>
         </div>
         <div class="d-grid gap-2 d-md-flex mt-2">
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">13.30</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">13.45</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">14.00</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">14.15</button>
-            <button type="button" class="btn custom-blue" onclick="toggleButton(this); reserveTime2(this);">14.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">13.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">13.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">14.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">14.15</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Onsdag d. 2 April', 'confirmationMessage2')">14.30</button>
         </div>
     </form>
-
     <div id="confirmationMessage2" class="alert alert-success mt-3 d-none"></div>
+
+    <h3 class="mb-3">📅 Torsdag den 3. april 2025</h3>
+    <form>
+        <div class="d-grid gap-2 d-md-flex">
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">11.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">12.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">12.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">12.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">13.00</button>
+        </div>
+        <div class="d-grid gap-2 d-md-flex mt-2">
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">13.30</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">13.45</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">14.00</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">14.15</button>
+            <button type="button" class="btn custom-blue" onclick="toggleButton(this, 'Torsdag d. 3 April', 'confirmationMessage3')">14.30</button>
+        </div>
+    </form>
+    <div id="confirmationMessage3" class="alert alert-success mt-3 d-none"></div>
 </body>
 
 <br />
