@@ -16,10 +16,8 @@
                     Filtrer
                 </button>
                 <ul class="dropdown-menu">
-                    <input class="form-control" type="text" placeholder="Søg.." disabled />
-
                     <li>
-                        <form method="post">
+                        <form method="post"> <!--each dropdown item is a form that sends the chosen filter value to the backend-->
                             <input type="hidden" name="FilterChoice" value="Smartboard/Projektor" />
                             <button type="submit" class="dropdown-item">Smartboard/Projektor</button>
                         </form>
@@ -61,16 +59,17 @@
 
     <div class="container mt-4"> <!--BILLEDER AF MØDERUM-->
         <div class="row mb-4">
+            <!--loops through all the filtered rooms from the switch in the backend) and displays them.-->
             @foreach (var room in Model.Rooms)
             {
                 <div class="col-md-4 text-center mb-2">
                     <img src="~/Images/Room1.jpg" class="img-fluid rounded mb-2" alt="Montenegro">
-                    <a asp-page="/Reservation" asp-route-id="@room.RoomID" class="btn btn-primary">Book tid i lokale @room.Name</a> <br/>
-                    ✅ Plads til @room.Capacity personer <br/>
-                    @((room.Equipment.Contains("Forplejning")) ? "✅" : "❌") Forplejning <br/>
-                    @((room.Equipment.Contains("Smartboard")) ? "✅" : "❌") Smartboard
+                    <a asp-page="/Reservation" asp-route-id="@room.RoomID" class="btn btn-primary">Book tid i lokale @room.Name</a> <br />
+                    ✅ Plads til @room.Capacity personer <br />
+                    @(room.Equipment.Contains("Forplejning") ? "☑️" : "❌") Forplejning <br />
+                    @(room.Equipment.Contains("Smartboard") ? "☑️" : "❌") Smartboard
                 </div>
-            }       
+            }
         </div>
     </div>
 

@@ -31,7 +31,7 @@ namespace Mikroprojekt_2.Pages
         {
             var allRooms = _roomService.GetAll(); //When page is loaded it shows all rooms
 
-            switch (FilterChoice) //Switch that displays rooms, given that they have same properties as users filter choice
+            switch (FilterChoice) //Switch that filters rooms, given that they have same properties as users' filter choice
             {
                 case "Smartboard/Projektor":
                     Rooms = allRooms.Where(r => r.Equipment.Contains("Smartboard")).ToList();
