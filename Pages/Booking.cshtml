@@ -66,8 +66,8 @@
                     <img src="~/Images/Room1.jpg" class="img-fluid rounded mb-2" alt="Montenegro">
                     <a asp-page="/Reservation" asp-route-id="@room.RoomID" class="btn btn-primary">Book tid i lokale @room.Name</a> <br />
                     ✅ Plads til @room.Capacity personer <br />
-                    @(room.Equipment.Contains("Forplejning") ? "☑️" : "❌") Forplejning <br />
-                    @(room.Equipment.Contains("Smartboard") ? "☑️" : "❌") Smartboard
+                    @(room.Equipment.Contains("Forplejning") ? "✅" : "❌") Forplejning <br />
+                    @(room.Equipment.Contains("Smartboard") ? "✅" : "❌") Smartboard
                 </div>
             }
         </div>
