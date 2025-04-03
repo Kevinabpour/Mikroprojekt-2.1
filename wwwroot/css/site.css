@@ -88,15 +88,29 @@ body {
 }
 /*The colors for booking buttons*/
 .custom-blue {
-    background-color: #192862 !important;
-    color: white !important;
+    background-color: #192862;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
 }
 
 .custom-red {
-    background-color: red !important;
-    color: white !important;
+    background-color: red;
+    color: white;
 }
 
+.d-none {
+    display: none;
+}
+
+.alert {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
 /*----------------------------------------------*/
 
