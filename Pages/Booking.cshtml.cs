@@ -25,13 +25,13 @@ namespace Mikroprojekt_2.Pages
         }
     
    [BindProperty]
-        public string FilterChoice { get; set; } // This will hold the selected filter
+        public string FilterChoice { get; set; } // Holds the selected filter choice from the user
 
         public void OnPost()
         {
-            var allRooms = _roomService.GetAll();
+            var allRooms = _roomService.GetAll(); //When page is loaded it shows all rooms
 
-            switch (FilterChoice)
+            switch (FilterChoice) //Switch that displays rooms, given that they have same properties as users filter choice
             {
                 case "Smartboard/Projektor":
                     Rooms = allRooms.Where(r => r.Equipment.Contains("Smartboard")).ToList();
