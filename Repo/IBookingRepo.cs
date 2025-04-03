@@ -6,6 +6,7 @@ namespace Mikroprojekt_2.Repo
     {
         public List<Booking> GetAll();
         public Booking GetByID(int id);
+        public void CreateBooking(Booking booking);
         public void RemoveBooking(int id);
         public void UpdateBooking(int id, string[] time, string comment);
     }
