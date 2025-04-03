@@ -9,26 +9,34 @@
 <html>
 <body>
 
+    <form method="post">
+        <input type="hidden" name="FilterChoice" id="filterChoice" /> <!--Dropdown filter menu-->
 
-    <div class="container-fluid"> <!-- FILTER DROPDOWN MENU-->
-        <div class="d-flex justify-content-end">
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                    Filtrer
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <input class="form-control" id="myInput" type="text" placeholder="Søg..">
-                    <li><a class="dropdown-item" href="#">Whiteboard/Projektor</a></li>
-                    <li><a class="dropdown-item" href="#">Forplejning</a></li>
-                    <li><a class="dropdown-item" href="#">Op til 5 personer</a></li>
-                    <li><a class="dropdown-item" href="#">Op til 10 personer</a></li>
-                    <li><a class="dropdown-item" href="#">Op til 30 personer</a></li>
-                    <li><a class="dropdown-item" href="#">Op til 50 personer</a></li>
-                </ul>
+        <div class="container-fluid">
+            <div class="d-flex justify-content-end">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Filtrer
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="submitFilter('Smartboard/Projektor')">Smartboard/Projektor</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="submitFilter('Forplejning')">Forplejning</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="submitFilter('5-10 personer')">5-10 personer</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="submitFilter('10-25 personer')">10-25 personer</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="submitFilter('25-40 personer')">25-40 personer</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="submitFilter('40-500 personer')">40-500 personer</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+
+    <script>
+        function submitFilter(value) {
+            document.getElementById('filterChoice').value = value;
+            document.forms[0].submit();
+        }
+    </script>
 
     <div class="container mt-4"> <!--BILLEDER AF MØDERUM-->
         <div class="row mb-4">
