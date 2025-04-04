@@ -3,8 +3,8 @@
 @{
 }
 
-
-
+  <!--Skrevet af Mathias-->
+  <!--The different features of the rooms-->
 <div class="col-md-4 text-center mb-2">
     <img src="~/Images/Room1.jpg" class="img-fluid rounded mb-2" alt="Montenegro">
     Rum @Model.room.Name <br />
@@ -12,13 +12,15 @@
     @((Model.room.Equipment.Contains("Forplejning")) ? "✅" : "❌") Forplejning <br />
     @((Model.room.Equipment.Contains("Smartboard")) ? "✅" : "❌") Smartboard
 </div>
+<!--------------------------------->
+<!--Skrevet af Christian-->
 
-@{
+@{ // Registeres the number of dates and the certain day 
     var days = new Dictionary<string, string>
     {
-        { "Tirsdag d. 1 April", "confirmationMessage1" },
-        { "Onsdag d. 2 April", "confirmationMessage2" },
-        { "Torsdag d. 3 April", "confirmationMessage3" }
+        { "Tirsdag d. 4 April", "confirmationMessage1" },
+        { "Onsdag d. 5 April", "confirmationMessage2" },
+        { "Torsdag d. 6 April", "confirmationMessage3" }
     };
 
     var times = new[] { "11.45", "12.00", "12.30", "12.45", "13.00", "13.30", "13.45", "14.00", "14.15", "14.30" };
@@ -30,7 +32,7 @@
     <link rel="stylesheet" href="~/css/styles.css">
 </head>
 <body class="container mt-5">
-
+    <!---Registeres the button that is press so that it can choose the rigt day for the code--->
     @foreach (var day in days)
     {
         <h3 class="mb-3">📅 @day.Key</h3>
@@ -46,24 +48,25 @@
     <script src="~/js/script.js"></script>
 
 </body>
+<!--A function which switches color if the room is free or not-->
 <script>
         function toggleButton(button, day, messageId) {
-        button.classList.toggle("custom-red");
-        button.classList.toggle("custom-blue");
+        button.classList.toggle("custom-red"); // When the room is taken
+        button.classList.toggle("custom-blue"); // When the room is free
 
         let selectedTime = button.innerText;
         let confirmationMessage = document.getElementById(messageId);
 
-        // Vis besked afhængig af om knappen er reserveret eller aflyst
+        // Shows message if its booked or canceled 
         if (button.classList.contains("custom-red")) {
-            confirmationMessage.innerText = "Du har reserveret tid " + selectedTime + " " + day;
+            confirmationMessage.innerText = "Du har reserveret tid " + selectedTime + " " + day; // Sends a messageId when the room is reserved
         } else {
-            confirmationMessage.innerText = "Du har aflyst din tid kl. " + selectedTime + " " + day;
+            confirmationMessage.innerText = "Du har aflyst din tid kl. " + selectedTime + " " + day; // Sends a messageId when the room is canceled 
         }
 
         confirmationMessage.classList.remove("d-none");
 
-        // Fjern beskeden efter 6 sekunder
+        // Removes the text after 6 second 
         setTimeout(() => {
             confirmationMessage.classList.add("d-none");
         }, 6000);

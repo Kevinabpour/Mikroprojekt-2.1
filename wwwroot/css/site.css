@@ -86,7 +86,7 @@ body {
     object-fit: cover;
    
 }
-/*The colors for booking buttons*/
+/*The colors for the free rooms */
 .custom-blue {
     background-color: #192862;
     color: white;
@@ -95,7 +95,7 @@ body {
     margin: 5px;
     cursor: pointer;
 }
-
+/* The color for the reserved button */
 .custom-red {
     background-color: red;
     color: white;
