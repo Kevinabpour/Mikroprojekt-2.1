@@ -16,12 +16,13 @@
             UserName = userName;
         }
 
-        public void AddBooking(int BookingNum)
+        public void AddBooking(int bookingNum)
         {
-            BookingList.Add(BookingNum);
+            BookingList.Add(bookingNum);
         }
-        public void RemoveBooking(int BookingNum)
+        public void RemoveBooking(int bookingNum)
         {
+            BookingList.Remove(bookingNum);
         }
 
     }
