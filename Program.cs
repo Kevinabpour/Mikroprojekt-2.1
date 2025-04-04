@@ -13,7 +13,8 @@ namespace Mikroprojekt_2
             builder.Services.AddSingleton<RoomService>();
             builder.Services.AddSingleton<IBookingRepo, BookingCollectionRepo>(); // Links service for booking collections
             builder.Services.AddSingleton<BookingService>();
-
+            builder.Services.AddSingleton<IUserRepo, UserCollectionRepo>(); // Links service for user collections
+            builder.Services.AddSingleton<UserService>();
 
             // Add services to the container.
             builder.Services.AddRazorPages();
