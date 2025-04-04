@@ -3,8 +3,7 @@
 @{
 }
 
-  <!--Skrevet af Mathias-->
-  <!--The different features of the rooms-->
+<!--Skrevet af Mathias-->
 <div class="col-md-4 text-center mb-2">
     <img src="~/Images/Room1.jpg" class="img-fluid rounded mb-2" alt="Montenegro">
     Rum @Model.room.Name <br />
@@ -12,10 +11,8 @@
     @((Model.room.Equipment.Contains("Forplejning")) ? "✅" : "❌") Forplejning <br />
     @((Model.room.Equipment.Contains("Smartboard")) ? "✅" : "❌") Smartboard
 </div>
-<!--------------------------------->
-<!--Skrevet af Christian-->
 
-@{ // Registeres the number of dates and the certain day 
+@{
     var days = new Dictionary<string, string>
     {
         { "Tirsdag d. 4 April", "confirmationMessage1" },
@@ -25,21 +22,24 @@
 
     var times = new[] { "11.45", "12.00", "12.30", "12.45", "13.00", "13.30", "13.45", "14.00", "14.15", "14.30" };
 }
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking System</title>
     <link rel="stylesheet" href="~/css/styles.css">
 </head>
+
 <body class="container mt-5">
-    <!---Registeres the button that is press so that it can choose the rigt day for the code--->
+
     @foreach (var day in days)
     {
         <h3 class="mb-3">📅 @day.Key</h3>
         <form method="post">
             <input type="hidden" name="RoomID" value="@Model.room.RoomID" />
             <input type="hidden" name="Day" value="@day.Key" />
-            <input type="hidden" id="timeInput-@day.Value" name="Time" />
+            <input type="hidden" name="Time" id="timeInput-@day.Value" />
+            <input type="hidden" name="MessageTarget" value="@day.Value" />
 
             <div class="time-slots">
                 @foreach (var time in times)
@@ -47,55 +47,26 @@
                     var fullTime = $"{time} {day.Key}";
                     var isBooked = Model.Bookings?.Any(b => b.RoomID == Model.room.RoomID && b.Time.Contains(fullTime)) ?? false;
                     var buttonClass = isBooked ? "custom-red" : "custom-blue";
-                    var buttonText = time;
 
                     <button type="submit"
                             onclick="document.getElementById('timeInput-@day.Value').value='@time';"
                             class="btn @buttonClass"
                             name="Action"
                             value="@(isBooked ? "Cancel" : "Book")">
-                        @buttonText
+                        @time
                     </button>
                 }
             </div>
+
+            @if (TempData["Message"] != null && TempData["MessageTarget"]?.ToString() == day.Value)
+            {
+                <div class="alert alert-info mt-2">@TempData["Message"]</div>
+            }
         </form>
-
-        @if (TempData["Message"] != null)
-        {
-            <div class="alert alert-info mt-2">@TempData["Message"]</div>
-        }
-
-
     }
 
     <script src="~/js/script.js"></script>
-
 </body>
-<!--A function which switches color if the room is free or not-->
-<script>
-        function toggleButton(button, day, messageId) {
-        button.classList.toggle("custom-red"); // When the room is taken
-        button.classList.toggle("custom-blue"); // When the room is free
-
-        let selectedTime = button.innerText;
-        let confirmationMessage = document.getElementById(messageId);
-
-        // Shows message if its booked or canceled 
-        if (button.classList.contains("custom-red")) {
-            confirmationMessage.innerText = "Du har reserveret tid " + selectedTime + " " + day; // Sends a messageId when the room is reserved
-        } else {
-            confirmationMessage.innerText = "Du har aflyst din tid kl. " + selectedTime + " " + day; // Sends a messageId when the room is canceled 
-        }
-
-        confirmationMessage.classList.remove("d-none");
-
-        // Removes the text after 6 second 
-        setTimeout(() => {
-            confirmationMessage.classList.add("d-none");
-        }, 6000);
-    }
-</script>
-
 
 <br />
 <p><a href="/Booking">Klik her</a> for at komme tilbage til bookingsiden</p>

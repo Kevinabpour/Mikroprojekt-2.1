@@ -8,34 +8,32 @@ namespace Mikroprojekt_2.Pages
     public class ReservationModel : PageModel
     {
         private readonly ILogger<ReservationModel> _logger;
-        public Room room { get; set; }
-        public List<Room> Rooms { get; set; } // List of all rooms
         private RoomService _roomService;
-        public List<Booking> Bookings { get; set; } // List of all bookings
         private BookingService _bookingService;
+
+        public Room room { get; set; }
+        public List<Room> Rooms { get; set; }
+        public List<Booking> Bookings { get; set; }
 
         public ReservationModel(ILogger<ReservationModel> logger, RoomService roomService, BookingService bookingService)
         {
             _logger = logger;
-            Rooms = roomService.GetAll();
             _roomService = roomService;
             _bookingService = bookingService;
-            Bookings = _bookingService.GetAll();
+            Rooms = _roomService.GetAll();
         }
 
         public void OnGet(int id)
         {
             room = _roomService.GetByID(id);
-            
+            Bookings = _bookingService.GetAll();
         }
-        public IActionResult OnPost(int RoomID, string Day, string Time, string Comment, string Action)
+
+        public IActionResult OnPost(int RoomID, string Day, string Time, string MessageTarget, string Action)
         {
             string fullTime = $"{Time} {Day}";
-            var allBookings = _bookingService.GetAll();
-            var existing = allBookings.FirstOrDefault(b =>
-                b.RoomID == RoomID &&
-                b.Time.Contains(fullTime)
-            );
+            var bookings = _bookingService.GetAll();
+            var existing = bookings.FirstOrDefault(b => b.RoomID == RoomID && b.Time.Contains(fullTime));
 
             if (Action == "Book")
             {
@@ -47,7 +45,7 @@ namespace Mikroprojekt_2.Pages
                         RoomID = RoomID,
                         UserID = 1,
                         Time = new[] { fullTime },
-                        Comment = Comment
+                        Comment = ""
                     };
 
                     _bookingService.CreateBooking(booking);
@@ -64,10 +62,9 @@ namespace Mikroprojekt_2.Pages
                 TempData["Message"] = $"❌ Du har aflyst din booking kl. {fullTime}.";
             }
 
+            TempData["MessageTarget"] = MessageTarget;
+
             return RedirectToPage(new { id = RoomID });
         }
-
-
-
     }
 }
