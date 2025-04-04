@@ -29,7 +29,7 @@ namespace Mikroprojekt_2.Pages
             Bookings = _bookingService.GetAll();
         }
 
-        public IActionResult OnPost(int RoomID, string Day, string Time, string MessageTarget, string Action)
+        public IActionResult OnPost(int RoomID, string Day, string Time, string MessageTarget, string Action, string Comment)
         {
             string fullTime = $"{Time} {Day}";
             var bookings = _bookingService.GetAll();
@@ -45,7 +45,7 @@ namespace Mikroprojekt_2.Pages
                         RoomID = RoomID,
                         UserID = 1,
                         Time = new[] { fullTime },
-                        Comment = ""
+                        Comment = Comment // Store the comment
                     };
 
                     _bookingService.CreateBooking(booking);

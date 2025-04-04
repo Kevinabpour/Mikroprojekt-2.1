@@ -3,7 +3,7 @@
 @{
 }
 
-<!--Skrevet af Mathias-->
+<!-- Skrevet af Mathias -->
 <div class="col-md-4 text-center mb-2">
     <img src="~/Images/Room1.jpg" class="img-fluid rounded mb-2" alt="Montenegro">
     Rum @Model.room.Name <br />
@@ -20,7 +20,7 @@
         { "Torsdag d. 6 April", "confirmationMessage3" }
     };
 
-    var times = new[] { "11.30", "12.00", "12.30", "13.00", "13.30", "14.00", "14.30", "15.00", "15.30", "16.00"};
+    var times = new[] { "11.30", "12.00", "12.30", "13.00", "13.30", "14.00", "14.30", "15.00", "15.30", "16.00" };
 }
 
 <head>
@@ -31,7 +31,6 @@
 </head>
 
 <body class="container mt-5">
-
     @foreach (var day in days)
     {
         <h3 class="mb-3">📅 @day.Key</h3>
@@ -62,6 +61,13 @@
             {
                 <div class="alert alert-info mt-2">@TempData["Message"]</div>
             }
+
+            <!-- Add Comment Input Field -->
+            <div class="mt-3">
+                <label for="comment">Kommentar (valgfri):</label>
+                <textarea name="Comment" id="comment" class="form-control" placeholder="Skriv din kommentar her..."></textarea>
+            </div>
+
         </form>
     }
 
